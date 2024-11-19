@@ -1,0 +1,311 @@
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{CJKutf8}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multicol} %колонки
+\usepackage{setspace} %межстрочный интервал
+\usepackage{ragged2e}% выравнивания текста по ширине в документе.
+\usepackage{fancyhdr} %настройки верхнего и нижнего колонтитулов в документе.
+\usepackage{parskip}
+\usepackage{titlesec} %стилей заголовков разделов в документе.
+\usepackage{enumitem} %настройки списков в документе.
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{float}%"Плавающие" картинки
+\usepackage{wrapfig}%Обтекание фигур (таблиц, картинок и прочего)
+
+\usepackage[left=1.9cm,right=1.9cm, top=2.2cm,bottom=2.5cm]{geometry}
+
+\justifying % выравнивает текст по ширине.
+\fancyhf{} %очищает все верхние и нижние колонтитулы.
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\cfoot{\vskip -1.5cm \thepage} %устанавливает номер страницы в нижнем колонтитуле.
+
+\linespread{0.84} %устанавливает межстрочный интервал в 0.84.
+
+
+\setlength{\columnsep}{0.5cm}
+\setcounter{page}{75}
+\renewcommand{\thesection}{\Roman{section}} %устанавливает стиль нумерации разделов в виде заглавных римских цифр.
+
+\titleformat{\section}{\footnotesize\centering\sc}{\thesection.}{0cm}{}[] %настраивает стиль заголовков разделов.
+\begin{document}
+
+
+\begin{multicols}{2}
+
+\textit{HP ProBook Hewlett Packard laptop with a Intel(R)
+Core(TM) i7-4900MQ} processor (4 cores with 2 threads)
+with a configured core frequency of 3.20 GHz, 16 GB
+RAM, and 256 GB SSD.
+
+At the same time, parallel execution of a small number
+of operations over sc-memory (for example, 100 or
+10,000 operations) in some cases can be worse than their
+sequential execution (Table 2).
+This behavior is related to the peculiarities of the con-trol mechanisms of the processes in the shared semantic
+memory, the classes of operations to be performed, and
+their specified input values in the context of the problem
+to be solved. For example, all sc-construction search oper-ations with the same sc-elements, executed in parallel, do
+not block each other. For example, the speed of parallel
+execution of operations on ostis-system files depends
+on the size of the buffer used when reading external
+information constructions and writing them to disk, as
+well as on the length of the information constructions
+themselves.
+
+\begin{center}
+\footnotesize Table II
+\end{center}
+
+\begin{center}
+\footnotesize Efficiency of using 4 physical threads to perform 100
+sc-memory operations compared to 1 physical thread
+\end{center}
+
+
+    
+    \begin{figure} [H]
+
+        \centering
+        \includegraphics[width=8cm]{Tabl1.png}
+        
+    \end{figure}
+    The figure 1 shows Dependence of speedup coefficient
+from parallel execution of a group of operations of the
+same class on 4 processes on the number of operations
+in this group, and the figure 2 shows Dependence of the
+execution time of a group of operations on the The figure 1 shows Dependence of speedup coefficient from parallel execution of a group of operations of the
+same class on 4 processes on the number of operations
+number of processes used
+
+
+        \begin{center}
+          \textit{C. Efficiency of network operations over sc-memory} \setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}  
+        \end{center}
+
+Network access to sc-memory is provided by the
+server subsystem of the ostis-systems software platform,
+implemented on the basis of Websocket and JSON
+languages (protocols) and providing network operations
+(commands) over sc-memory [3].
+In the process of testing the implementation, the
+throughput of its commands was calculated. During the
+load testing a test client system implemented in C++ was
+used. The same device was used as the device used for
+testing operations over sc-memory. As a result, it was
+found out that when sending 1000 different commands:
+\textit{or creating sc-elements, commands for pro-cessing contents of ostis-system files} and \textit{commands for
+deleting sc-elements} — the time spent on their processing
+did not exceed 0.2 seconds. At the same time, in some
+cases it took no more than 0.14 seconds to process 1000 \textit{commands for creating sc-elements}
+, while for commands \textit{commands
+for deleting sc-elements}
+ it took no more than 0.12
+seconds, commands for processing the contents of ostis-system files — no more than 0.10 seconds, commands
+to search for sc-constructions isomorphic to a given five-element graph-template — no more than 0.45 seconds.
+
+\begin{flushleft} %%убираем отступ 
+\textit{D. Conclusions}
+\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\end{flushleft}
+
+From the test results, it is clear that the current
+implementation of the ostis-systems software platform is
+an effective means of processing distributed information
+using both the software interface and the network inter-face and communication protocols.
+
+\begin{center}  
+The current
+    \textit{Im lementation of sc-memory provides:}
+\end{center}
+
+\begin{itemize}
+    \item stability in single-threaded and multi-threaded
+modes; \setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+    \item ast speed of work in single-threaded and multi-threaded modes;\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+    \item owledge and data storage and pro-cessing in single- and multi-threaded modes.\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\end{itemize}
+
+The proposed shared semantic memory model enables
+efficient tracking and synchronization of parallel data
+accesses. The implementation of this model demonstrates
+a significant increase (by 2-3 orders of magnitude) in
+the throughput of parallel task execution compared to
+previous versions of the platform. However, to ensure
+(causal, sequential) consistency of processes and their
+operations, besides the data level, it is necessary to
+manage the knowledge level [37] .
+\begin{center}
+V. Conclusion
+
+\end{center}
+
+In this paper, a model and implementation of the
+shared semantic memory has been proposed and dis-cussed in detail, including (!):
+
+
+    \begin{center}
+       
+    \end{center}
+\end{multicols}
+
+ \begin{figure} [H]
+
+        \centering
+        \includegraphics[width=19cm]{Tabl2.png}
+        \caption{\footnotesize Dependence of speedup coefficient from parallel execution of a group of operations of the same class on 4 processes on the number
+of operations in this group}
+    \end{figure}
+
+\begin{figure} [H]
+
+        \centering
+        \includegraphics[width=19cm]{Tabl3.png}
+        \begin{center}
+           \caption{Dependence of the execution time of a group of operations on the number of processes used} 
+        \end{center}
+        
+    \end{figure}
+\newpage
+
+\begin{multicols}{2}
+
+\begin{itemize}
+    \item   a storage for unified representation and processing
+of graph constructions;for unified representation and processing
+of graph constructions;
+    \item storage for unified representation of string con-structions used as file contents in graph construc-tions;
+
+    \item storage for managing events in this memory;
+    
+    \item a storage for managing processes running in this
+memory;
+
+   \item a set of operations for working with this memory.
+The proposed model of the shared semantic memory includes:
+
+\item models and algorithms for allocating and releasing
+cells in this memory, providing:\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+
+\begin{itemize}[leftmargin=*]
+ 
+    \item reusability of the released memory segments;\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+    \item ability to utilize new vacant memory segments;\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\end{itemize} 
+
+\item Models and algorithms to efficiently allocate pro-cesses in this memory;
+\begin{itemize}[leftmargin=*]
+
+    \item rapid parallel creation of elements in the memory
+by allocating processes over the segments of the
+memory;
+
+    \item fast unblockable parallel search of constructions,
+provided there are no other operations on these
+constructions.
+
+\end{itemize}
+
+\item  Models and algorithms for managing subscriptions
+to events in this memory;\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+
+\item odels and algorithms for synchronizing the exe-cution of processes in the shared memory sections,
+providing:
+\begin{itemize}[leftmargin=*]
+    \item  parallel access to sc-memory, i.e. possibility of
+parallel execution of actions in sc-memory with-out violating correctness of the data structures in
+it;
+
+   \item absence of deadlocks, races and hungry processes
+operating in sc-memory.\setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
+\end{itemize}
+
+
+Promising directions to further this line of work are:
+
+
+The formally described model of semantic memory
+\item evelopment of a model for distributedof information in the unified semantic memory unified  rep-resentation and processing of information in the unified semantic memory;
+
+\item evelopment of a model for representation and stor-age of platform-dependent agent programs;a model for representation and stor-age of platform-dependent agent programs  agent programs;a model for representation,
+
+\item evelopment of a consistency model to ensure cor-rectness of agents’ operation on constructions in the memory;
+
+\item  development of a model of memory configuration
+from the memory itself.
+
+In addition, other equally important areas of work are:
+
+\item improving the documentation of the current Imple-mentation of sc-memory and the current Software implementation of ostis-platform;
+
+\item  improvement of methodologies and tools for devel-oping documentation of software systems;sc-memory and the current Software implementation of ostis-platform;
+
+\item  improvement and mass distribution of the Software
+implementation of ostis-platform and intelligent sys-tems developed on its basis.improvement and mass distribution of the Software
+implementation.
+
+
+\end{itemize}
+
+The formally described model of semantic memory
+is consistent with the previously described ontological
+model of this memory [3]. The author of this paper
+believes that the used approach to modeling of complex
+objects will help to simplify the understanding of the
+operation of intelligent systems developed according to
+the principles of the OSTIS Technology
+\begin{center}
+    Acknowledgment
+\end{center}
+
+The author would like to thank the scientific teams of
+the departments of Intelligent Information Technologies
+of Belarusian State University of Informatics and Radio-electronics and Brest State Technical University for their
+help in the work and valuable comments.
+
+\begin{center}
+    References
+\end{center}
+[1] N. Zotov, “Design principles, structure, and development
+prospects of the software platform of ostis-systems,” \textit{Otkrytye se-manticheskie tekhnologii proektirovaniya intellektual’nykh system} 
+\textit{[Open semantic technologies for intelligent systems]}, pp. 67\textthreequartersemdash76, 2023.
+[2] \textthreequartersemdash \textthreequartersemdash,  “Implementation of information retrieval subsystem in \textit{Otkrytye semanticheskie
+tekhnologii proektirovaniya intellektual’nykh system [Open se-mantic technologies for intelligent systems]}, pp. 77–94, 2023.
+[3] \textthreequartersemdash \textthreequartersemdash, “Software platform for next-generation intelligent computer systems,” in \textit{Otkrytye semanticheskie tekhnologii  [Open semantic technologies for intelli-gent systems ]} BSUIR, Minsk, 2022, pp. 297\textthreequartersemdash326.
+[4] V. Golenkov, N. Guliakina, and D. Shunkevich,  \textit{Otkrytaja
+tehnologija ontologicheskogo proektirovanija, proizvodstva
+i jekspluatacii semanticheski sovmestimyh gibridnyh
+intellektual sistem [Open technology of
+ontological design, production and operation of semantically
+compatible hybrid intelligent computer systems]}, V. Golenkov,
+Ed. Minsk: Bestprint [Bestprint], 2021.
+%noident абзац без отступа 
+\noindent [5] V. Golenkov et al., “Associative semantic computers for intelligent computer systems of a new generation,” in \textit{Otkrytyetekhnologii proektirovaniya intellektual’nykh system [Open Semantic Technologies for Intelligent Systems (OSTIS)]}, vol. 7. BSUIR, Minsk, 2023, pp. 39–60.
+
+\noindent[6] V. Golenkov, “Ontology-based design of intelligent systems,” \textit{rytye semanticheskie tekhnologii proektirovaniya intellek-tual’nykh system [Open semantic technologies for intelligent
+systems]} , pp. 37–56, 2017.
+
+\noindent [7] D. Shunkevich, “Ontology-based design of hybrid problem
+solvers,” in \textit{ Otkrytye semanticheskie tekhnologii proektirovaniya intellektual’nykh system [Open semantic technologies for intelli-gent systems]}. Cham: Springer International Publishing, 2022, pp. 101–131.
+
+ \noindent [8] S. Auer, V. Kovtun, M. Prinz, A. Kasprzik, M. Stocker, and M. E. Vidal, “Towards a knowledge graph for science,” in \textit{ Proceedings of the 8th international conference on web intelligence, mining and semantics,} 2018, pp. 1–6.
+
+ \noindent [9] V. Golenkov, Ed., \textit{Tehnologija kompleksnoj podderzhki zhiznennogo cikla semanticheski sovmestimyh intellektual’nyh komp’juternyh sistem novogo pokolenija [Technology of complex life cycle support of semantically compatible intelligent computer systems of new generation ]} \qquad Bestprint, 2023.
+
+ \noindent [10] A. Palagin and N. Petrenko, “To the question of system-ontological integration of subject area knowledge,” \textit{ Mathematical Machines and Systems} , vol. 1, no. 3-4, pp. 63–75, 2007
+\end{multicols}
+
+
+\end{document}
